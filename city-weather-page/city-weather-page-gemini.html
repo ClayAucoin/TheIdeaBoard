@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <script>
+        const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+        const baseHref = isLocal ? '/' : '/weekly-reflections/';
+        document.write(`<base href="${baseHref}">`);
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>City Weather</title>
@@ -12,6 +18,7 @@
         }
     </style>
 </head>
+
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full">
@@ -23,14 +30,16 @@
         </div>
 
         <div class="mb-4">
-            <select id="city-select" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <select id="city-select"
+                class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <option value="new-orleans">New Orleans</option>
                 <option value="austin">Austin</option>
                 <option value="san-francisco">San Francisco</option>
             </select>
         </div>
 
-        <button id="display-weather" class="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300">
+        <button id="display-weather"
+            class="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300">
             Display Weather
         </button>
     </div>
@@ -97,4 +106,5 @@
     </script>
 
 </body>
+
 </html>
